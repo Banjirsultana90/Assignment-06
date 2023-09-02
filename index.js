@@ -1,3 +1,5 @@
+
+
 const handlesearch = async () => {
     const res = await fetch('https://openapi.programming-hero.com/api/videos/categories')
     const data = await res.json();
@@ -77,13 +79,17 @@ const clickhandler = async (categoryId) => {
     // console.log(data.data)
     const cardcontainer = document.getElementById("cards")
     if (!data || !data.data || data.data.length === 0) {
+       
         
-        cardcontainer.innerHTML = ` <div class=" flex flex-col items-center justify-center p-50  ">
-        <figure class=""> <img src="./Icon.png" alt="" /></figure>
-        <h2 class="text-3xl text-center ">Oops!! Sorry, There is <br> no content here</h2>
-      </div>
+        cardcontainer.innerHTML = 
+            ` <div class="flex-1 flex-col items-center justify-center mt-10 mx-auto">
+             <figure class="pl-20"> <img src="./Icon.png" alt="" /></figure>
+             <h2 class="text-3xl text-center ">Oops!! Sorry, There is <br> no content here</h2>
+             </div>
         
             `;
+
+        
     } else {
        
         cardcontainer.innerHTML = ""; 
